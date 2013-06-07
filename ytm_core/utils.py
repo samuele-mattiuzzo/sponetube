@@ -1,6 +1,6 @@
 import urlparse
 
-SECS_TO_YEARS = 60 * 60 * 24 * 31 * 12
+from .conf import SECS_TO_YEARS
 
 
 def format_plurals(number, string):
