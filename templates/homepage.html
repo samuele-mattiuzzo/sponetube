@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<head>
+  <title>There is no place like Spone</title>
+</head>
+<html>
+  <body>
+
+    <form action="/" method="post">
+        <input type="text" id="videourl" name="videourl" />
+        <input type="submit" value="Spone me!" />
+    </form>
+
+    <p>{{ year }}</p>
+
+  </body>
+</html>
+{% endautoescape %}

@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 import os
+import cgi
 import urllib
 import jinja2
 import webapp2
@@ -24,6 +25,7 @@ from google.appengine.ext import ndb
 # app related imports
 from ytm_core import conf
 from ytm_core.youtube_api import get_video_info
+from ytm_core.utils import strip_video
 
 # jinja env variable setup
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -33,12 +35,18 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class HomePageHandler(webapp2.RequestHandler):
 
-    page = 'templates/index.html'
+    home_page = 'templates/homepage.html'
+    video_page = 'templates/videopage.html'
 
     def get(self):
-        # easy: loads with default video
-        template = JINJA_ENVIRONMENT.get_template(self.page)
-        self.response.write(template.render(get_video_info()))
+        template = JINJA_ENVIRONMENT.get_template(self.home_page)
+        self.response.write(template.render({'year': 2013, }))
+
+    def post(self):
+        videoID = strip_video(cgi.escape(self.request.get('videourl')))
+        template = JINJA_ENVIRONMENT.get_template(self.video_page)
+        self.response.write(template.render(get_video_info(videoID=videoID)))
+
 
 
 def main():
