@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<head>
+  <title>{% block title %}There is no place like Spone{% endblock %}</title>
+  <link type="text/css" rel="stylesheet" href="/sheets/style.css" />
+</head>
+<html>
+  <body>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- left menu -->
+    {% block leftmenu %}
+    <div id="navAlpha">
+        <a href="/" title="SponeTube">Homepage</a>
+        <a href="" title="">YouTube top 10</a>
+        <a href="" title="">SponeTube top 10</a>
+        <a href="" title="">Mehlink</a>
+    </div>
+    {% endblock %}
+
+    <!-- right menu -->
+    {% block rightmenu %}
+    <div id="">
+        <h2>About</h2>
+        <p>Blabbity blobbity blu</p>
+    </div>
+    {% endblock %}
+
+    <!-- footer -->
+    <div class="content">
+        <p>{{ year }}</p>
+    </div>
+
+  </body>
+</html>
+{% endautoescape %}
