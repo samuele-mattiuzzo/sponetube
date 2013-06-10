@@ -12,6 +12,9 @@ handlers:
 - url: /sheets/
   static_dir: statics/sheets
 
+- url: /pictograms/
+  static_dir: statics/pictograms
+
 - url: /.*
   script: main.py
 
