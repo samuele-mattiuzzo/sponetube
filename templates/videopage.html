@@ -5,10 +5,10 @@
 {% block content %}
 
   <h1>{{ title|safe }}</h1>
-  <h2>{{ views|safe }} views, {{ length|safe }} seconds</h2>
+  <p>{{ views|safe }} views, {{ length|safe }} seconds</p>
 
   <img src="{{ thumbnail }}" />
 
-  <p>We wasted {{ ytm|safe }} on this video!</p>
+  <h2>We wasted {{ ytm|safe }} on this video!</h2>
 
 {% endblock %}
