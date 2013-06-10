@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-{% autoescape true %}
-<head>
-  <title>{{ title if title else 'Sponetube' }}</title>
-</head>
-<html>
-  <body>
+{% extends "templates/base.html" %}
 
-    <h1>{{ title|safe }}</h1>
-    <h2>{{ views|safe }} views, {{ length|safe }} seconds</h2>
+{% block title %}{{ title if title else 'Sponetube' }}{% endblock %}</title>
 
-    <img src="{{ thumbnail }}" />
+{% block content %}
+<h1>{{ title|safe }}</h1>
+<h2>{{ views|safe }} views, {{ length|safe }} seconds</h2>
 
-    <p>We wasted {{ ytm|safe }} on this video!</p>
+<img src="{{ thumbnail }}" />
 
-  </body>
-</html>
-{% endautoescape %}
+<p>We wasted {{ ytm|safe }} on this video!</p>
+{% endblock %}
