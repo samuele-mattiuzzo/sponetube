@@ -9,6 +9,9 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
+- url: /sheets/
+  static_dir: statics/sheets
+
 - url: /.*
   script: main.py
 
