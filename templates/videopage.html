@@ -1,12 +1,14 @@
 {% extends "templates/base.html" %}
 
-{% block title %}{{ title if title else 'Sponetube' }}{% endblock %}</title>
+{% block title %}{{ title if title else 'Sponetube' }}{% endblock %}
 
 {% block content %}
-<h1>{{ title|safe }}</h1>
-<h2>{{ views|safe }} views, {{ length|safe }} seconds</h2>
 
-<img src="{{ thumbnail }}" />
+  <h1>{{ title|safe }}</h1>
+  <h2>{{ views|safe }} views, {{ length|safe }} seconds</h2>
 
-<p>We wasted {{ ytm|safe }} on this video!</p>
+  <img src="{{ thumbnail }}" />
+
+  <p>We wasted {{ ytm|safe }} on this video!</p>
+
 {% endblock %}
